@@ -1,0 +1,213 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+}
+
+.sort label {
+  margin-right: 10px;
+}
+
+.sort select {
+  padding: 5px;
+}
+
+.search-bar input {
+  padding: 5px;
+  width: 200px;
+}
+
+#logout {
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#logout:hover {
+  background-color: #218838;
+}
+
+.table-container {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+button.action-btn {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button.resolve-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+button.resolve-btn:hover {
+  background-color: #218838;
+}
+
+button.reopen-btn {
+  background-color: #ffc107;
+  color: white;
+}
+
+button.reopen-btn:hover {
+  background-color: #e0a800;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort,
+  .search-bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  #logout {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .table-container {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
+}
+
+/* For mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px;
+    font-size: 1.2em;
+  }
+
+  .top-bar {
+    padding: 5px 10px;
+  }
+
+  .sort label {
+    margin-right: 5px;
+  }
+
+  .sort select,
+  .search-bar input {
+    padding: 5px;
+    font-size: 0.9em;
+  }
+
+  #logout {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+
+  button.action-btn {
+    padding: 5px;
+    font-size: 0.9em;
+  }
+}
+
+/* For large screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .header {
+    padding: 20px;
+    font-size: 1.5em;
+  }
+
+  .top-bar {
+    padding: 15px 30px;
+  }
+
+  .sort select,
+  .search-bar input {
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  #logout {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .table-container {
+    padding: 30px;
+  }
+
+  table {
+    font-size: 1em;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  button.action-btn {
+    padding: 10px;
+    font-size: 1em;
+  }
+}
