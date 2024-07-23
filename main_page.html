@@ -7,24 +7,21 @@
     <link href="CSS/main_page.css" rel="stylesheet" />
   </head>
   <body>
-
     <div class="header">
       <h1>Issue Tracker</h1>
     </div>
 
     <div class="topp">
       <div class="clg">
-        <p class="clg_name"> IIT Gandhinagar</p>
-      <img  class="clg_logo" src="images/iitgn_logo.png" alt="">
+        <p class="clg_name">IIT Gandhinagar</p>
+        <img class="clg_logo" src="images/iitgn_logo.png" alt="" />
       </div>
 
       <div class="icons">
-          <p class="helpdesk"><a href="help_desk.html"> Help desk</a></p>
-          <p class="status"><a href="request_status.html">Request status</a></p>
+        <p class="helpdesk"><a href="help_desk.html"> Help desk</a></p>
+        <p class="status"><a href="request_status.html">Request status</a></p>
       </div>
     </div>
-
-      
 
     <div class="form-container">
       <h2>Fill the Query Form</h2>
@@ -35,6 +32,7 @@
           id="name"
           name="name"
           placeholder="Enter your name"
+          autocomplete="name"
           required
         />
 
@@ -44,11 +42,12 @@
           id="department"
           name="department"
           placeholder="Enter your department"
+          autocomplete="department"
           required
         />
 
         <label for="query-type">Query Type:</label>
-        <select id="query-type" name="query-type" required>
+        <select id="query-type" name="query-type" autocomplete="off" required>
           <option value="select">Select...</option>
           <option value="academic">Academic</option>
           <option value="hostel">Hostel</option>
@@ -63,6 +62,7 @@
             name="description"
             placeholder="Enter description"
             maxlength="500"
+            autocomplete="off"
             required
           ></textarea>
         </div>

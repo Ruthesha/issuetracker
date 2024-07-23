@@ -33,26 +33,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const mediaFile = mediaInput.files[0];
-        if (mediaFile && mediaFile.size > 50 * 1024 * 1024) { 
+        if (mediaFile && mediaFile.size > 50 * 1024 * 1024) {
             alert('File size cannot exceed 50MB.');
             return;
         }
 
-        const queryData = JSON.parse(localStorage.getItem('queries')) || [];
         const newQuery = {
-            id: queryData.length + 1,
-            date: new Date().toLocaleString(),
             name: document.getElementById('name').value,
             department: document.getElementById('department').value,
             type: queryType,
             media: mediaFile ? 'View Media' : '',
-            description: description,
-            status: 'open'
+            description: description
         };
-        queryData.push(newQuery);
-        localStorage.setItem('queries', JSON.stringify(queryData));
 
-        modal.style.display = 'block';
+        fetch('http://localhost:5000/queries', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newQuery)
+        })
+        .then(response => response.json())
+        .then(data => {
+            modal.style.display = 'block';
+        })
+        .catch(error => console.error('Error:', error));
     });
 
     closeModal.addEventListener('click', function() {

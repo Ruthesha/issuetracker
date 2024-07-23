@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const tableBody = document.getElementById('query-table');
-    const queryData = JSON.parse(localStorage.getItem('queries')) || [];
+    let queryData = [];  
 
     function populateTable(data) {
         tableBody.innerHTML = '';
         data.forEach(item => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${item.id}</td>
+                <td>${item._id}</td>
                 <td>${item.date}</td>
                 <td>${item.name}</td>
                 <td>${item.department}</td>
@@ -21,7 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    populateTable(queryData);
+    fetch('http://localhost:5000/queries')
+        .then(response => response.json())
+        .then(data => {
+            queryData = data.queries; 
+            populateTable(queryData);  
+        })
+        .catch(error => console.error('Error:', error));
 
     document.getElementById('sort-order').addEventListener('change', function() {
         const sortedData = queryData.sort((a, b) => {
